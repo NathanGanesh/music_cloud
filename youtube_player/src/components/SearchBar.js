@@ -9,7 +9,7 @@ export default class SearchBar extends Component {
 
 	onFormSubmit = (event) => {
         event.preventDefault();
-        console.log(this.state.term);
+        this.props.onFormSubmit(this.state.term);
     };
 
 	render() {
@@ -19,7 +19,7 @@ export default class SearchBar extends Component {
 					<div className="field">
 						<label>Video search</label>
 						<input onChange={this.onInputChange} value={this.state.term} type="text" />
-						<p>{this.state.term}</p>
+				
 					</div>
 				</form>
 			</div>
